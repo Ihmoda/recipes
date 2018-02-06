@@ -1,0 +1,20 @@
+<div class="col-md-12">
+    <h2>Edit Product</h2>
+    <form (submit)="editProduct()">
+      <div class="form-group">
+        <label for="title">Title:</label>
+        <input type="text" [(ngModel)]="product.name" class="form-control" name="title" placeholder="Enter product title">
+      </div>
+      <div class="form-group">
+        <label for="price">Price:</label>
+        <input type="currency" [(ngModel)]="product.price" class="form-control" name="price" placeholder="Enter price">
+      </div>
+      <div class="form-group">
+        <label for="url">Image URL:</label>
+        <input type="text" [(ngModel)]="product.url" class="form-control" name="url" placeholder="Enter img url">
+      </div>
+      <div class="form-group">
+          <button type="submit" class="btn btn-primary">Edit</button>
+      </div>
+    </form>
+  </div>

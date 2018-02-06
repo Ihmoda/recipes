@@ -1,0 +1,13 @@
+<div class="row">
+  <h4>
+    Welcome {{user.username}}</h4>
+  <form (submit)='logout()'>
+    <button type="submit" class="btn btn-link float-right">Logout</button>
+  </form>
+</div>
+<hr>
+
+<form (submit)="createRecipe()">
+  Recipe Name:<input type="text" [(ngModel)]="name" name="recipe">
+  <button type="submit" class="btn btn-primary">Start Recipe</button>
+</form>

@@ -1,0 +1,37 @@
+<div class="row">
+    <h4>
+      Welcome {{user.username}}</h4>
+    <form (submit)='logout()'>
+      <button type="submit" class="btn btn-link float-right">Logout</button>
+    </form>
+  </div>
+  <hr>
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Recipe</th>
+        <th>Rating</th>
+        <th>Chef</th>
+        <th>Like</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let recipe of recipes">
+        <td scope="row">
+          <a class="btn btn-link" [routerLink]="['recipe', recipe._id]">{{recipe.name}}</a>
+        </td>
+        <td>{{recipe.rating}}</td>
+        <td>{{recipe.chef}}</td>
+        <td>
+          <form (submit)="like(recipe)">
+            <button type="submit" class="btn btn-primary">Like</button>
+          </form>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <form (submit)="new()">
+    <button type="submit" class="btn btn-primary">New Recipe</button>
+  </form>

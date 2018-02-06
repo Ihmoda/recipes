@@ -1,0 +1,10 @@
+<div class="col-md-12">
+    <div class="row">
+        <form (submit)="signIn()">
+            Name:
+            <input type="text" [(ngModel)]="user" name="name" required minlength="2" maxlength="24">
+            <input type="submit" class="btn btn-primary" value="Create">
+        </form>
+    </div>
+</div>
+

@@ -1,0 +1,13 @@
+<h1>Products List</h1>
+<div *ngIf="product_list.length">
+<div *ngFor="let x of product_list; let idx=index">
+  <img src="{{x.url}}" alt="{{x.name}}">
+  <p>{{x.name}}</p>
+  <p>{{x.price | currency:'USD':true:'1.2-2'}}</p>
+  <a class="btn btn-primary" [routerLink]="['edit', x._id]">Edit Product</a>
+  <a class="btn btn-warning" [routerLink]="['remove', x._id]">Delete Product</a>
+</div>
+</div>
+
+
+{{ product_list | json }}

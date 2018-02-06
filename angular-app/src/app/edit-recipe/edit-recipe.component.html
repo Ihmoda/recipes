@@ -1,0 +1,30 @@
+<div class="row">
+  <h4>
+    Welcome {{user.username}}</h4>
+  <form (submit)='logout()'>
+    <button type="submit" class="btn btn-link float-right">Logout</button>
+  </form>
+</div>
+<hr>
+
+<h1>{{recipe.name}} by {{user.username}}</h1>
+<h2>Rating: {{recipe.rating}}</h2>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Ingredient</th>
+      <th>Amount</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let ingredient of recipe.ingredients">
+      <td scope="row">{{ingredient.name}}</td>
+      <td>{{ingredient.amount}}</td>
+    </tr>
+  </tbody>
+</table>
+
+<a class="btn btn-primary" [routerLink]="['update']">Update Recipe</a>
+
+
